@@ -12,6 +12,44 @@ body {
     justify-content: center;
     color: white;
     font-size: 2em;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.ribbon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 10px;
+    background-color: gold;
+    transform: translate(-50%, -50%);
+}
+.ribbon::before, .ribbon::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 100px;
+    background-color: gold;
+    top: -45px;
+}
+.ribbon::before {
+    left: 50%;
+    transform: rotate(45deg);
+}
+.ribbon::after {
+    right: 50%;
+    transform: rotate(-45deg);
+}
+
+@keyframes openBox {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0);
+    }
 }
 
 /* Example colors for boxes */
